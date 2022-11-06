@@ -6,8 +6,8 @@ The deployed url is [https://us-central1-ng-syncvr.cloudfunctions.net/calculatio
 
 ## REST API Endpoints
 
-- [GET] https://us-central1-ng-syncvr.cloudfunctions.net/calculation - ** to get all the calculations **
-- [GET] https://us-central1-ng-syncvr.cloudfunctions.net/calculation/:num - ** to calculate one number **
+- [GET] https://us-central1-ng-syncvr.cloudfunctions.net/calculation - **to get all the calculations**
+- [GET] https://us-central1-ng-syncvr.cloudfunctions.net/calculation/:num - **to calculate one number**
 
 ## To do
 
