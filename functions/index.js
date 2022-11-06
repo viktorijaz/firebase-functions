@@ -7,7 +7,7 @@ admin.initializeApp();
 
 const app = express();
 
-
+/** Get all the previous Fibonacci calculations */
 app.get("/", async (req, res) => {
   const snapshot = await admin.firestore().collection("availableCalculations").get();
 
@@ -22,7 +22,9 @@ app.get("/", async (req, res) => {
   res.status(200).send(JSON.stringify(calculations));
 });
 
-
+/** Calculate a Fibonacci number
+ * this will be a REST Endpoint, so we use cors here
+ */
 app.get("/:id", async (req, res) => {
   return cors(req, res, async() => {  
     const result = fibonacci(req.params.id);
@@ -37,6 +39,7 @@ app.get("/:id", async (req, res) => {
   });
 })
 
+/** helper method */
 const fibonacci = n => {
   if (n <= 1) {
     return n;
@@ -46,10 +49,3 @@ const fibonacci = n => {
 
 exports.calculation = functions.https.onRequest(app);
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info("Hello logs!", {structuredData: true});
-  response.send("Hello from Firebase!");
-});
